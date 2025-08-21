@@ -9,6 +9,8 @@ node_modules
 openapi.json
 playground
 tmp
+opencode-dev
+tui
 dist
 .turbo
 **/.serena
