@@ -39,23 +39,23 @@ export namespace SystemPrompt {
     const project = Instance.project
     return [
       [
-        `Here is some useful information about the environment you are running in:`,
+        // `Here is some useful information about the environment you are running in:`,
         `<env>`,
         `  Working directory: ${Instance.directory}`,
         `  Is directory a git repo: ${project.vcs === "git" ? "yes" : "no"}`,
         `  Platform: ${process.platform}`,
         `  Today's date: ${new Date().toDateString()}`,
         `</env>`,
-        `<files>`,
-        `  ${
-          project.vcs === "git"
-            ? await Ripgrep.tree({
-                cwd: Instance.directory,
-                limit: 200,
-              })
-            : ""
-        }`,
-        `</files>`,
+        // `<project>`,
+        // `  ${
+        //   app.git
+        //     ? await Ripgrep.tree({
+        //         cwd: app.path.cwd,
+        //         limit: 200,
+        //       })
+        //     : ""
+        // }`,
+        // `</project>`,
       ].join("\n"),
     ]
   }
