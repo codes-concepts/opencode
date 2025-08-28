@@ -1,6 +1,9 @@
 #!/bin/bash
 set -e
 
+# current git branch
+current_branch=$(git rev-parse --abbrev-ref HEAD)
+
 echo "Building opencode development version..."
 
 # Clean up any previous builds
@@ -22,6 +25,6 @@ rm dist/temp/bin/tui
 cd ../..
 
 # Copy to a convenient location
-cp packages/opencode/dist/temp/bin/opencode ~/.local/bin/oc-coding
-chmod +x ~/.local/bin/oc-coding
-echo "✅ Build complete! Binary available at: ~/.local/bin/oc-coding"
+cp packages/opencode/dist/temp/bin/opencode ~/.local/bin/oc-$current_branch
+chmod +x ~/.local/bin/oc-$current_branch
+echo "✅ Build complete! Binary available at: ~/.local/bin/oc-$current_branch"
