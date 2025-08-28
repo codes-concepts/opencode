@@ -22,9 +22,6 @@ rm dist/temp/bin/tui
 cd ../..
 
 # Copy to a convenient location
-cp packages/opencode/dist/temp/bin/opencode ./opencode-dev
-chmod +x ./opencode-dev
-
-echo "✅ Build complete! Binary available at: $(pwd)/opencode-dev"
-#echo "To install globally: cp ./opencode-dev ~/.local/bin/opencode"
-cp ./opencode-dev ~/.local/bin/opencode
+cp packages/opencode/dist/temp/bin/opencode ~/.local/bin/oc-coding
+chmod +x ~/.local/bin/oc-coding
+echo "✅ Build complete! Binary available at: ~/.local/bin/oc-coding"
